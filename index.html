@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<title>Ailəm ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(120deg, #f6d365, #fda085);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Button ekranı */
+    .start-screen {
+        text-align: center;
+        animation: fadeIn 1.2s ease;
+    }
+
+    button {
+        padding: 18px 40px;
+        font-size: 20px;
+        border: none;
+        border-radius: 50px;
+        background: #ff6f61;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Card */
+    .card {
+        background: white;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        text-align: center;
+        display: none;
+        animation: openCard 1s ease forwards;
+    }
+
+    h1 {
+        color: #ff6f61;
+    }
+
+    p {
+        color: #444;
+        line-height: 1.6;
+    }
+
+    .family {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .member {
+        background: #fff3e0;
+        padding: 15px;
+        border-radius: 15px;
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards;
+    }
+
+    .member:nth-child(1) { animation-delay: 0.3s; }
+    .member:nth-child(2) { animation-delay: 0.6s; }
+    .member:nth-child(3) { animation-delay: 0.9s; }
+
+    footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+    }
+
+    /* Animations */
+    @keyframes openCard {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="start-screen" id="startScreen">
+    <button onclick="openCard()">Aç ❤️</button>
+</div>
+
+<div class="card" id="card">
+    <h1>Ailəm ❤️</h1>
+    <p>
+        Siz mənim həyatımın ən dəyərli insanlarısınız.
+        Hər zaman yanımda olduğunuz üçün minnətdaram.
+    </p>
+
+    <div class="family">
+        <div class="member">
+            <h3>Ata</h3>
+            <p>Güc və dayaq</p>
+        </div>
+        <div class="member">
+            <h3>Ana</h3>
+            <p>Sevgi və mərhəmət</p>
+        </div>
+        <div class="member">
+            <h3>Bacı / Qardaş</h3>
+            <p>Gülüş və dostluq</p>
+        </div>
+    </div>
+
+    <footer>
+        ❤️ Sevgi ilə hazırlandı
+    </footer>
+</div>
+
+<script>
+    function openCard() {
+        document.getElementById("startScreen").style.display = "none";
+        document.getElementById("card").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
